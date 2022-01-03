@@ -39,53 +39,6 @@ io.on("connection", function (socket) {
     io.emit('chat message', msg);
   });
 
-
-  io.on('connection', (socket) => {
-
-    online++;
-    
-    socket.on('newuser', () => {
-        io.emit('new', online);
-       
-        socket.on("user_connected", function (nome) {
-            users[nome] = socket.id;
-            io.emit("user_connected", nome);
-        });
-    
-    })
-    
-    socket.on('load', (data) => {
-        io.emit('load', data);
-       
-    })
-    
-    socket.on('typing', (data) => {
-        io.emit('receiver_typing', data);
-       
-    })
-    
-    socket.on('update_last_project', (data) => {
-        io.emit('update_last_project', data);
-       
-    })
-    
-    socket.on('load_offer', (data) => {
-        io.emit('load_offer', data);
-       
-    })
-    
-    socket.on('load_contact_msg', (data) => {
-        io.emit('load_contact_msg', data);
-       
-    })
-    
-    //load_offer
-    
-    socket.on('disconect', () => {
-        online--;
-        io.emit('new', online)
-    })
-    
     })
 
 
