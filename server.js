@@ -12,9 +12,6 @@ app.use(function (request, result, next) {
 	result.setHeader("Access-Control-Allow-Origin", "*");
 	next();
 });
-
-
-
 io.on("connection", function (socket) {
 	console.log("User connected: ",  socket.id);
 
@@ -27,14 +24,9 @@ io.on("connection", function (socket) {
 		//var socketId = users[data.receiver_id];
          users[data.receiver_id];
     	io.emit("message_received", data);
-		//socket.to(socketId).emit("message_received", data);
-
-		//connection.query("INSERT INTO user_chat (sender_id, receiver_id, message) VALUES ('" + data.sender_id + "', '" + data.receiver_id + "', '" + data.message + "')", function (error, result) {
-			//
-		//});
+		
 	});
-});
-	
+
   socket.on('chat message', (msg) => {
     io.emit('chat message', msg);
   });
