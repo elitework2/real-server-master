@@ -1,7 +1,8 @@
 const app = require('express')();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
-
+var online = 0;
+var users = [];
 app.get('/', (req, res) => {
   //res.sendFile(__dirname + '/index.html');
   res.send("<h1>Ola mundo</h1>");
