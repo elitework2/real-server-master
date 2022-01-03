@@ -1,14 +1,14 @@
 {
-    "name": "socket-chat-example",
+    "name": "real-server-maste",
     "version": "0.0.1",
-    "main": "server.js",
-    "scripts": {
-        "test": "echo \"Error: no test pecified\" && exit 1"
-    },
+     "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
     "repository": "https://github.com/GiuZambot/chat-socketio-nodejs",
     "licence": "MIT",
     "keywords": ["example","heroku"],
-    "author": "GiuZambot",
+    "author": "elite2",
     "description": "my first socket.io app",
     "engines": {
         "node": "14.17.0"
