@@ -7,6 +7,11 @@ app.get('/', (req, res) => {
   res.send("<h1>Ola mundo</h1>");
 });
 
+app.use(function (request, result, next) {
+	result.setHeader("Access-Control-Allow-Origin", "*");
+	next();
+});
+
 io.on('connection', (socket) => {
   console.log('a user connected');
 
