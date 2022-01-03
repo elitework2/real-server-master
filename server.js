@@ -1,8 +1,6 @@
-const { Socket } = require('dgram');
-const express = require('express')
-const app = express()
-const http = require('http').createServer(app)
-const io = require('socket.io')(http)
+const app = require('express')();
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
 const bodyParser = require("body-parser");
 const mysql = require("mysql");
 
