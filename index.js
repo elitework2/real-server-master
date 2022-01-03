@@ -8,7 +8,7 @@ const io = require('socket.io')(http)
 const bodyParser = require("body-parser");
 const mysql = require("mysql");
 //app.use(bodyParser.urlencoded());
-const PORT = process.env.PORT || 2500;
+const PORT = process.env.PORT || 3000;
 var online = 0;
 var users = [];
 app.use(bodyParser.json());//parser utizado para requisições quando é via post, identificar o json no body, via get não há necessidade
